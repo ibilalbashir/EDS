@@ -1,7 +1,12 @@
+import { MatGridListModule } from '@angular/material';
+import { RouterModule, Routes } from '@angular/router';
+import { FooterModule } from './footer/footer.module';
+import { HeaderModule } from './header/header.module';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routes } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -10,8 +15,13 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HeaderModule,
+    FooterModule,
+    RouterModule.forRoot(routes),
+    MatGridListModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
